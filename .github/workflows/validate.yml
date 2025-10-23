@@ -1,0 +1,35 @@
+# Last Updated: 2025-10-23
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install markdownlint-cli
+        run: |
+          npm install -g markdownlint-cli@0.41.0
+      - name: Lint Markdown
+        run: |
+          markdownlint "**/*.md" --ignore ".venv/**" || true
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Markdown link check
+        uses: gaurav-nelson/github-action-markdown-link-check@1.0.15
+        with:
+          use-quiet-mode: 'yes'
+          use-verbose-mode: 'no'
+          folder-path: '.'
+          file-path: ''
+
