@@ -78,7 +78,7 @@ When you need to check if any number falls within a range:
     <template_key_files>
     * executive-summary.md: One-page sub-project overview (latest update with timestamp)
     * README.md: structure and navigation for this folder sub-project
-    * FACTS.md: most important factual information for this sub-project, such person names, links to websites, addresses, tech specs of device, addresses, e-mails, etc
+* FACTS.md: most important factual information for this sub-project, such as person names, links to websites, addresses, tech specs of device, addresses, e-mails, etc
     </template_key_files>
 
 </file_management_rules>
